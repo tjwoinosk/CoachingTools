@@ -7,6 +7,7 @@ class Swimmer:
 		self.birthday = birthday
 		self.div = 0
 		self.isMale = isMale
+		self.swimmerID = None
 	
 	def __repr__(self):
 		fn = self.firstName
@@ -26,6 +27,15 @@ class Swimmer:
 	
 	def getBirthday(self):
 		return self.birthday
+	
+	def getSwimmerID(self):
+		if self.swimmerID is None:
+			return ''
+			
+		return self.swimmerID
+
+	def setSwimmerID(self, SIDString):
+		self.swimmerID = SIDString
 	
 	def isLesserLastName(self, other):
 		if self.lastName < other.lastName:

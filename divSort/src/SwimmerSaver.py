@@ -48,8 +48,10 @@ class SwimmerSaver(SwimmerSaverBase):
 		ln = swimmerObject.lastName
 		dob = str(swimmerObject.birthday)
 		div = swimmerObject.div
+		swID = swimmerObject.getSwimmerID()
+		print(swID)
 		
-		line = '%s,%s,%s,%s,%s\n' % (fn, ln, gender, dob, div)
+		line = '%s,%s,%s,%s,%s,%s\n' % (fn, ln, gender, dob, div, swID)
 		return line
 	
 	def __sortSwimmersByLastName(self, swimmerList):
@@ -62,7 +64,7 @@ class SwimmerSaver(SwimmerSaverBase):
 		swimmerList.sort(key = lambda x: x.birthday)
 	
 	def formatData(self):
-		self.listOfCSVLines.append('Athlete First Name,Athlete Last Name,Athlete Gender,Athlete DOB,Athlete Div\n')
+		self.listOfCSVLines.append('Athlete First Name,Athlete Last Name,Athlete Gender,Athlete DOB,Athlete Div, Swimmer ID\n')
 		self.listOfCSVLines.append(G_seperate)
 		
 		for div in [1,2,3,4,5,6,7,8]:

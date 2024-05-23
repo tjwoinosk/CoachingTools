@@ -12,7 +12,7 @@ def sortSwimmers(divRulesFile, csvFile, resDir):
 	divRulesObject = readRules.returnRulesObject()
 	#print(divRulesObject)
 	
-	swimmerReaderObject = SR.SwimmerReader(csvFile)
+	swimmerReaderObject = SR.SwimmerReader2024(csvFile)
 	swimmerReaderObject.read()
 	swimmerHandlerObject = swimmerReaderObject.returnSwimmerObject()
 	print('%s Swimmers Found.' % swimmerHandlerObject.numberSwimmers())

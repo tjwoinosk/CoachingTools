@@ -24,6 +24,7 @@ class SwimmerHandler:
 				birthday = swim.birthday
 				tmp = SW.Swimmer(fn,ln,birthday,True)
 				tmp.setDiv(swim.div)
+				tmp.swimmerID = swim.swimmerID
 				newList.append(tmp)
 		return newList
 	
@@ -36,6 +37,7 @@ class SwimmerHandler:
 				birthday = swim.birthday
 				tmp = SW.Swimmer(fn,ln,birthday,False)
 				tmp.setDiv(swim.div)
+				tmp.swimmerID = swim.swimmerID
 				newList.append(tmp)
 		return newList
 	
