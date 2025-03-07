@@ -82,6 +82,33 @@ class SwimmerReader(SwimmerReaderBase):
 			self.__swimmerHandlerObject.addSwimmer(tempSwimmer)
 
 
+class SwimmerReader2025(SwimmerReader):
+	def parseLineToSwimmer(self, inputLine):
+		inputLine = inputLine.strip()
+		inputLineList = inputLine.split(',')
+		
+		if not(len(inputLineList) > 20):
+			return None
+		
+		if inputLineList[1] == '':
+			return None
+		
+		if 'reg' in inputLineList[1].lower():
+			return None
+		
+		fn = inputLineList[6].split(' ')[0]
+		ln = inputLineList[7].split(' ')[0]
+		
+		isMale = True
+		if 'fe' in inputLineList[9].lower():
+			isMale = False
+			
+		birthday = self.yearMonthDayStrToDate(inputLineList[10])
+		
+		retSwimmer = SW.Swimmer(fn,ln,birthday,isMale)
+		retSwimmer.setSwimmerID(inputLineList[8])
+		return retSwimmer
+
 class SwimmerReader2024(SwimmerReader):
 	def parseLineToSwimmer(self, inputLine):
 		inputLine = inputLine.strip()

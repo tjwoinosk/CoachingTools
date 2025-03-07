@@ -1,0 +1,8 @@
+div-n,OldestPossible(Month/Year)
+div-1,2015-05
+div-2,2013-11
+div-3,2012-05
+div-4,2010-11
+div-5,2009-05
+div-6,2007-05
+div-7,2004-05
